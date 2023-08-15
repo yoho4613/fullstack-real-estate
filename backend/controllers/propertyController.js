@@ -47,6 +47,7 @@ export const getAllProperties = asyncHandler(async (req, res) => {
       },
     });
     res.send(properties);
+
   } catch (error) {
     throw new Error(error.message);
   }
