@@ -13,9 +13,9 @@ export const getAllProperties = async () => {
     });
 
     if (response.status === 400 || response.status === 500) {
-      throw response
+      throw response;
     }
-    return response.data
+    return response.data;
   } catch (error) {
     toast.error("Something went wrong");
     throw error;
@@ -29,11 +29,32 @@ export const getProperty = async (id) => {
     });
 
     if (response.status === 400 || response.status === 500) {
-      throw response
+      throw response;
     }
-    return response.data
+    return response.data;
   } catch (error) {
     toast.error("Something went wrong");
     throw error;
   }
-}
+};
+
+export const createUser = async (email, token) => {
+  console.log(email)
+  console.log(token)
+  try {
+    await api.post(
+      `/user/register`,
+      {
+        email,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  } catch (error) {
+    toast.error("Something went wrong, Please try again");
+    throw error;
+  }
+};
