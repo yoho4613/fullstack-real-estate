@@ -101,7 +101,7 @@ const Property = () => {
               </span>
             </div>
 
-            {bookings.map((booking) => booking.id).includes(id) ? (
+            {bookings?.map((booking) => booking.id).includes(id) ? (
               <>
                 <Button disabled={cancelling} variant="outline" w={"100%"} color="red" onClick={() => cancelBooking()}>
                   <span>Cancel Booking</span>

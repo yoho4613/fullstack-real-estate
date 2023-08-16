@@ -18,16 +18,18 @@ const Heart = ({ id }) => {
   const { mutate } = useMutation({
     mutationFn: () => toFav(id, user?.email, token),
     onSuccess: () => {
-      setUserDetails((prev) => ({
-        ...prev,
-        favourites: updateFavourites(id, prev.favourites),
-      }));
+      if (favourites) {
+        setUserDetails((prev) => ({
+          ...prev,
+          favourites: updateFavourites(id, prev.favourites),
+        }));
+      }
     },
   });
 
   useEffect(() => {
-    setHeartColor(() => checkFavourites(id, favourites))
-  }, [favourites])
+    setHeartColor(() => checkFavourites(id, favourites));
+  }, [favourites]);
 
   const handleLike = () => {
     if (validateLogin()) {
