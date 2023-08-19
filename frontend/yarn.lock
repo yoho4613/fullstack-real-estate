@@ -2009,6 +2009,11 @@
     "has-tostringtag" "^1.0.0"
     "is-typed-array" "^1.1.10"
 
+"world-countries@^4.0.0":
+  "integrity" "sha512-LsFFYmggquj0U+i7VUaJOZYz5F4QNu+oceGw8odnyVHMT2LxYSdVncqdouOEnq1esr7yCakp9+3BZTztuSw1Pg=="
+  "resolved" "https://registry.npmjs.org/world-countries/-/world-countries-4.0.0.tgz"
+  "version" "4.0.0"
+
 "wrappy@1":
   "integrity" "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ=="
   "resolved" "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz"

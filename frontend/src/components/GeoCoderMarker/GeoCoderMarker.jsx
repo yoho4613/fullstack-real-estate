@@ -24,7 +24,7 @@ const GeoCoderMarker = ({ address }) => {
         map.flyTo([lat, lng], 14)
       }
     })
-  }, [])
+  }, [address])
 
   return (
     <Marker position={position} icon={DefaultIcon}>
