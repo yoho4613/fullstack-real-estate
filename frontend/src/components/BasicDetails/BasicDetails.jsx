@@ -1,9 +1,21 @@
-import { useForm } from '@mantine/form'
-import React from 'react'
-import { validateString } from '../../utils/common'
-import { Box, Button, Group, NumberInput, TextInput, Textarea } from '@mantine/core';
+import { useForm } from "@mantine/form";
+import React from "react";
+import { validateString } from "../../utils/common";
+import {
+  Box,
+  Button,
+  Group,
+  NumberInput,
+  TextInput,
+  Textarea,
+} from "@mantine/core";
 
-const BasicDetails = ({prevStep, nextStep, propertyDetails, setPropertyDetails}) => {
+const BasicDetails = ({
+  prevStep,
+  nextStep,
+  propertyDetails,
+  setPropertyDetails,
+}) => {
   const form = useForm({
     initialValues: {
       title: propertyDetails.title,
@@ -13,55 +25,56 @@ const BasicDetails = ({prevStep, nextStep, propertyDetails, setPropertyDetails})
     validate: {
       title: (value) => validateString(value),
       description: (value) => validateString(value),
-      price: (value) => value < 1000 ? "Must be grater than 999 dollars" : null
-    }
+      price: (value) =>
+        value < 1000 ? "Must be grater than 999 dollars" : null,
+    },
   });
 
-  const {title, description, price} = form.values;
+  const { title, description, price } = form.values;
   const handleSubmit = () => {
-    const {hasErrors} = form.validate();
-    if(!hasErrors) {
-      setPropertyDetails((prev) => ({...prev, title, description, price}));
-      nextStep()
+    const { hasErrors } = form.validate();
+    if (!hasErrors) {
+      setPropertyDetails((prev) => ({ ...prev, title, description, price }));
+      nextStep();
     }
-  }
+  };
 
   return (
     <Box maw="50%" mx="auto" my="md">
-      <form onSubmit={(e) => {
-        e.preventDefault();
-        handleSubmit()
-      }}>
-        <TextInput 
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit();
+        }}
+      >
+        <TextInput
           withAsterisk
           label="Title"
-          placeholder='Property Name'
+          placeholder="Property Name"
           {...form.getInputProps("title")}
         />
-        <Textarea 
-          placeholder='Description'
+        <Textarea
+          placeholder="Description"
           label="Description"
           withAsterisk
           {...form.getInputProps("description")}
         />
-        <NumberInput 
+        <NumberInput
           withAsterisk
           label="Price"
-          placeholder='1000'
+          placeholder="1000"
           min={0}
           {...form.getInputProps("price")}
         />
         <Group position="center" mt={"xl"}>
-        <Button variant="default" onClick={prevStep} type="submit">
-          Back
-        </Button>
-        <Button  type="submit">
-          Next Step
-        </Button>
-      </Group>
+          <Button variant="default" onClick={prevStep}>
+            Back
+          </Button>
+          <Button type="submit">Next Step</Button>
+        </Group>
       </form>
     </Box>
-  )
-}
+  );
+};
 
-export default BasicDetails
+export default BasicDetails;

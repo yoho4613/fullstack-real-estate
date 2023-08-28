@@ -15,7 +15,7 @@ export const createProperty = asyncHandler(async (req, res) => {
     userEmail,
   } = req.body.data;
 
-  console.log(req.body.data);
+
   try {
     const property = await prisma.property.create({
       data: {

@@ -4,6 +4,7 @@ import AddLocation from "../AddLocation/AddLocation";
 import { useAuth0 } from "@auth0/auth0-react";
 import UploadImage from "../UploadImage/UploadImage";
 import BasicDetails from "../BasicDetails/BasicDetails";
+import Facilities from "../Facilities/Facilities";
 
 const AddPropertyModal = ({ opened, setOpened }) => {
   const [active, setActive] = useState(0);
@@ -14,7 +15,7 @@ const AddPropertyModal = ({ opened, setOpened }) => {
     price: 0,
     suburb: "",
     city: "",
-    country: "",
+    // country: "",
     address: "",
     image: null,
     facilities: {
@@ -59,11 +60,7 @@ const AddPropertyModal = ({ opened, setOpened }) => {
               setPropertyDetails={setPropertyDetails}
             />
           </Stepper.Step>
-          <Stepper.Step
-            label="Images"
-            description="Upload"
-            // allowStepSelect={shouldAllowSelectStep(1)}
-          >
+          <Stepper.Step label="Images" description="Upload">
             <UploadImage
               nextStep={nextStep}
               prevStep={prevStep}
@@ -71,16 +68,22 @@ const AddPropertyModal = ({ opened, setOpened }) => {
               setPropertyDetails={setPropertyDetails}
             />
           </Stepper.Step>
-          <Stepper.Step
-            label="Final step"
-            description="Get full access"
-            // allowStepSelect={shouldAllowSelectStep(2)}
-          >
+          <Stepper.Step label="Basics" description="Details">
             <BasicDetails
               nextStep={nextStep}
               prevStep={prevStep}
               propertyDetails={propertyDetails}
               setPropertyDetails={setPropertyDetails}
+            />
+          </Stepper.Step>
+          <Stepper.Step label="Basics" description="Details">
+            <Facilities
+              nextStep={nextStep}
+              prevStep={prevStep}
+              propertyDetails={propertyDetails}
+              setPropertyDetails={setPropertyDetails}
+              setOpened={setOpened}
+              setActiveStep={setActive}
             />
           </Stepper.Step>
 

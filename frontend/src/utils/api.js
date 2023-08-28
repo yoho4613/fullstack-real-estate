@@ -140,3 +140,20 @@ export const getAllBookings = async (email, token) => {
     throw error;
   }
 };
+
+export const createProperty = async (data, token) => {
+  console.log(data)
+  try {
+    await api.post(
+      `/property/create`,
+      {
+        data,
+      },
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+
+
+  } catch (error) {
+    throw error;
+  }
+};

@@ -13,13 +13,13 @@ const AddLocation = ({ propertyDetails, nextStep, setPropertyDetails }) => {
       city: propertyDetails?.city,
       address: propertyDetails?.address,
       suburb: propertyDetails?.suburb,
-      country: propertyDetails?.country,
+      // country: propertyDetails?.country,
     },
     validate: {
       city: (value) => validateString(value),
       address: (value) => validateString(value),
       suburb: (value) => validateString(value),
-      country: (value) => validateString(value),
+      // country: (value) => validateString(value),
     },
   });
   const { city, address, suburb, country } = form.values;
@@ -31,7 +31,7 @@ const AddLocation = ({ propertyDetails, nextStep, setPropertyDetails }) => {
         city,
         address,
         suburb,
-        country,
+        // country,
       }));
       nextStep();
     }
@@ -73,16 +73,16 @@ const AddLocation = ({ propertyDetails, nextStep, setPropertyDetails }) => {
             label="City"
             {...form.getInputProps("city", { type: "input" })}
           />
-          <Select
+          {/* <Select
             w={"100%"}
             withAsterisk
-            label="address"
+            label="country"
             clearable
             searchable
             data={getAll()}
             defaultValue={{ label: "New Zealand", value: "NZ" }}
             {...form.getInputProps("country", { type: "input" })}
-          />
+          /> */}
         </div>
 
         {/* Right */}
