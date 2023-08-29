@@ -1,14 +1,22 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  build:{
+  build: {
     rollupOptions: {
-      external: ["@emotion/react", "@emotion/cache", "@emotion/serialize", "@emotion/sheet", "@emotion/**"],
-      
+      external: [
+        "@emotion/react",
+        "@emotion/cache",
+        "@emotion/serialize",
+        "@emotion/sheet",
+        "@emotion/utils",
+        "@emotion/memoize",
+        "@emotion/hash",
+        "@emotion/unitless",
+      ],
     },
-    outDir: "build"
-  }
-})
+    outDir: "build",
+  },
+});
