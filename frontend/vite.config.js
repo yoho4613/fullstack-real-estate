@@ -9,7 +9,7 @@ export default defineConfig({
       external: [
         "@emotion/react",
         "@emotion/cache",
-        "@emotion/serialize",
+
         "@emotion/sheet",
         "@emotion/utils",
         "@emotion/memoize",
