@@ -7,14 +7,14 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: [
-        "@emotion/react",
-        "@emotion/cache",
-        "@emotion/serialize",
-        "@emotion/sheet",
-        "@emotion/utils",
-        "@emotion/memoize",
-        "@emotion/hash",
-        "@emotion/unitless",
+        // "@emotion/react",
+        // "@emotion/cache",
+        // "@emotion/serialize",
+        // "@emotion/sheet",
+        // "@emotion/utils",
+        // "@emotion/memoize",
+        // "@emotion/hash",
+        // "@emotion/unitless",
       ],
     },
   },
