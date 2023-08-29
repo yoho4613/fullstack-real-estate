@@ -10,9 +10,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       domain="harakeke-2023-jiho.au.auth0.com"
       clientId="ZABaXXx1EaHv2GhDUMYu2AEEOgyJ5d5Y"
       authorizationParams={{
-        redirect_uri: "http://localhost:5173",
+        redirect_uri: "https://fullstack-real-estate.vercel.app/",
       }}
-      audience="http://localhost:8000"
+      audience="https://fullstack-real-estate-server.vercel.app/"
       scope="openid profile email"
     >
       <App />
