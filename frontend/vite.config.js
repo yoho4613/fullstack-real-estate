@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build:{
     rollupOptions: {
-      external: ["@emotion/react", "@emotion/cache"],
+      external: ["@emotion/react", "@emotion/cache", "@emotion/serialize", "@emotion/sheet", "@emotion/**"],
       
     },
     outDir: "build"
