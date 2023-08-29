@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import Searchbar from "../../components/Searchbar/Searchbar";
-import "./Properties.css";
+import "../Properties/Properties.css";
 import useProperties from "../../hooks/useProperties";
 import { PuffLoader } from "react-spinners";
 import PropertyCard from "../../components/PropertyCard/PropertyCard";
 import { useState } from "react";
+import UserDetailContext from "../../context/UserDetailContext";
 
-const Properties = () => {
+const Favourites = () => {
   const { data, isError, isLoading } = useProperties();
   const [filter, setFilter] = useState("");
+  const {
+    userDetails: { favourites },
+  } = useContext(UserDetailContext);
 
   if (isError) {
     return (
@@ -39,6 +43,9 @@ const Properties = () => {
 
         <div className="paddings flexCenter properties">
           {data
+            .filter((property) =>
+              favourites?.includes(property.id)
+            )
             .filter(
               (property) =>
                 property.title.toLowerCase().includes(filter.toLowerCase()) ||
@@ -55,4 +62,4 @@ const Properties = () => {
   );
 };
 
-export default Properties;
+export default Favourites;
