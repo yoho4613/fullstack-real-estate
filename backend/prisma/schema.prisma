@@ -28,7 +28,6 @@ model Property {
   address     String
   city        String
   suburb      String
-  country     String
   image       String
   facilities  Json
   userEmail   String
